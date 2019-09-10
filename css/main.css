@@ -346,7 +346,7 @@ th:last-child, td:last-child {
  * -------------------------------------------------------------------
  */
 button, .button {
-	margin-bottom: 1.2;
+	margin-bottom: 1.2rem;
 }
 fieldset {
 	margin-bottom: 1.5rem;
@@ -703,9 +703,10 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
 	background: #1f1f1f;
 }
-button.full-width, .button.full-width {
+button.-width, .button.full-width {
 	width: 100%;
-	margin-right: 0;
+	
+margin-right: 0;
 }
 button.medium, .button.medium {
 	height: 5.7rem !important;
@@ -1118,9 +1119,9 @@ header .top-bar {
 	width: 100%;
 	font-family: "poppins-medium", sans-serif;
 	font-size: 1.5rem;
-	position: absolute;
-	top: 100%;
-	left: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
 }
 
 /* dropdown nav */
@@ -1131,7 +1132,6 @@ header .top-bar {
 	width: 100%;
 	height: auto;
 	clear: both;
-	display: none;
 }
 .main-navigation > li {
 	display: block;
@@ -1161,11 +1161,7 @@ header .top-bar {
  * header styles
  * --------------------------------------------------------------- 
  */
-@media only screen and (max-width:1024px) {
-	header .top-bar {
-		left: 60px;
-	}
-}
+ 
 @media only screen and (max-width:768px) {
 	header .top-bar {
 		left: 50px;
@@ -1177,11 +1173,46 @@ header .top-bar {
 	}
 }
 @media only screen and (max-width:400px) {
-	header .top-bar {
-		left: 25px;
+	header .top-bar {	   
+		left: 25px;		
+	}
+	
+	header .main-navigation {
+	    display: none;
 	}
 }
 
+@media only screen and (min-width:400px) {
+    header .menu-toggle  {
+        display: none;
+    }
+    
+    header .row {
+        margin: 0;
+    	padding: 0;
+  	    width: 100%;
+    	top: 0;
+    }
+ 
+    header .top-bar  {
+        position: static;
+        rigth: 0;
+    }
+ 
+	header #main-nav-wrap {
+ 		width: 100%;
+ 		position: static;
+ 	}
+ 
+	header .main-navigation {
+ 		display: flex;
+ 		flex-direction: row;
+ 		justify-content: space-between;
+ 		background-color: rgba(0, 0, 0, .4);
+ 		width: 100%;
+ 		height: 100px; 
+ 	}
+}
 
 /** 
  * ===================================================================
@@ -1400,10 +1431,10 @@ header .top-bar {
 	margin-left: -30px;
 }
 .intro-info img {
-	height: 9rem;
-	width: 9rem;
+	height: 12rem;
+	width: 12rem;
 	border-radius: 50%;
-	margin: .9rem 0 0 0;
+	margin: 6rem 15px 0 0;
 	float: left;
 }
 .intro-info .lead {
@@ -1413,7 +1444,7 @@ header .top-bar {
 
 .about-content {
 	position: relative;
-	text-align: left;
+	text-align: center;
 	max-width: 850px;
 	margin-bottom: 3.6rem;
 }
@@ -1427,22 +1458,24 @@ header .top-bar {
 #grid-skills {
 	background: #FFFFFF;
 	padding-top: 1rem;
-	padding-bottom: 6rem;
+	padding-bottom: 6rem;	
 }
+
 #grid-skills .grid-layout-item {
 	padding: 0;
 	position: relative;
 	overflow: hidden;
-	text-align: center;
-	margin-bottom: 15px;
+	position: relative;
+	margin-bottom: 15px;		
 }
+ 
 #grid-skills .grid-layout-item img {
 	vertical-align: middle;
 	-moz-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	-webkit-transition: all 0.5s ease-in-out;
 	-ms-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;	
 }
 
 #grid-skills .overlay {
@@ -1525,6 +1558,12 @@ header .top-bar {
 	}
 }
 
+@media only screen and (min-width: 400px) {
+    #grid-skills .col-four  {
+        width: 600px;
+        margin-left: 150px;
+    }
+}
 
 /**
  * Popup Modal - (_layout.scss)
@@ -1650,7 +1689,7 @@ header .top-bar {
 
 .button-section {
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 30px;	
 }
 .button-section .button {
 	width: 250px;
@@ -1672,8 +1711,9 @@ header .top-bar {
 }
 @media only screen and (max-width:768px) {
 	.intro-info img {
-		height: 7.8rem;
-		width: 7.8rem;
+		height: 9rem;
+		width: 9rem;
+		margin: .9rem 0 0 0;
 	}
 	.intro-info .lead {
 		padding-left: 11rem;
@@ -1698,8 +1738,8 @@ header .top-bar {
 		margin-top: 3rem;
 	}
 	.intro-info img {
-		height: 6.6rem;
-		width: 6.6rem;
+		height: 9rem;
+		width: 9rem;
 		float: none;
 		display: inline-block;
 	}
@@ -1707,6 +1747,12 @@ header .top-bar {
 		padding-left: 0;
 		text-align: center;
 	}
+}
+
+@media only screen and (min-width:400px) {
+    .button-section  {
+    padding-left: 32.5%;
+    }
 }
 
 
@@ -1719,8 +1765,10 @@ header .top-bar {
 #portfolio {
 	background: #ebebeb;
 	padding-top: 12rem;
-	padding-bottom: 12rem;
+	padding-bottom: 9rem;
+	text-align:  center;
 }
+ 
 #portfolio .folio-item {
 	padding: 0;
 	position: relative;
@@ -1805,6 +1853,13 @@ header .top-bar {
 		font-size: 3.1rem;
 	}
 }
+
+@media only screen and (min-width:400px){
+    .portfolio-content {
+        padding-left: 55px;
+    }
+    
+}
 @media only screen and (max-width:768px) {
 	#portfolio .folio-title {
 		font-size: 2.5rem;
@@ -1815,7 +1870,14 @@ header .top-bar {
 		font-size: 2.2rem;
 	}
 }
-
+ 
+@media only screen and  (min-width:400px) {
+    #portfolio .folio-item {
+        margin-right: 15px;
+        width: 250px;
+        height: 200px;
+    }
+}
 
 /**
  * section ads - (_layout.scss)
@@ -1965,6 +2027,7 @@ header .top-bar {
 #reference .phrase-quote {
 	color: #ebebeb;
 	font-family: "poppins-medium", sans-serif;
+	
 }
 
 #reference cite {
@@ -2012,7 +2075,7 @@ header .top-bar {
 	padding-bottom: 7.2rem;
 }
 #contact .section-intro h1 {
-	color: white;
+	color: #FFFFFF;
 }
 #contact .section-intro h5 {
 	color: #FF0077;
@@ -2171,6 +2234,12 @@ header .top-bar {
 	font-size: 1.5rem;
 	text-align: center;
 }
+
+.contact-info h1 {
+    color: #FFFFFF;
+    margin: 3rem 0 6rem 0;
+}
+
 .contact-info .collapse {
 	padding: 0;
 }
@@ -2183,6 +2252,27 @@ header .top-bar {
 }
 .contact-info h5 {
 	color: #FF0077;
+}
+
+@media only screen and (min-width: 400px) {
+    .contact-info  {
+        display: flex;
+        flex-direction: column;
+       
+        }
+        
+    .contact-info .col-four h5 {
+        display: none;
+        } 
+        
+    .contact-info .col-four {
+        display: flex;
+        margin: 0 auto;
+        }
+        
+    .contact-info .col-four p {
+        margin-left: 40px;
+        }        
 }
 
 /**
@@ -2251,19 +2341,22 @@ footer {
 	padding-bottom: 3rem;
 	font-size: 1.4rem;
 	font-family: "poppins-regular", sans-serif;
+	text-align: center;
 }
+
 footer a, footer a:visited {
 	color: #FFFFFF;
 }
 footer a:hover, footer a:focus {
 	color: #FF0077;
 }
-footer .row {
+footer .row-footer {
 	max-width: 900px;
 }
 footer .social {
-	text-align: right;
+    padding-top: 10px;
 }
+
 footer .footer-social {
 	display: inline-block;
 	font-size: 2.1rem;
@@ -2271,6 +2364,7 @@ footer .footer-social {
 	padding: 0;
 	position: relative;
 	top: -.3rem;
+	
 }
 footer .footer-social li {
 	display: inline-block;
@@ -2281,7 +2375,8 @@ footer .footer-social li a {
 	color: #FFFFFF;
 }
 footer .copyright span {
-	display: inline-block;
+	display: block;
+	
 }
 footer .copyright span::after {
 	content: "|";
@@ -2301,6 +2396,7 @@ footer .copyright span:last-child::after {
 @media only screen and (max-width:768px) {
 	footer {
 		text-align: center;
+		
 	}
 	footer .social {
 		display: block;
